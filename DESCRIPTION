@@ -1,0 +1,12 @@
+Package: PFbaseproject
+Title: Generates Base Problem Forward Project Template
+Version: 0.0.0.0001
+Authors@R: 
+    person(given = "Ken",
+           family = "Morales",
+           role = c("aut", "cre"),
+           email = "kmorales@problemforward.com")
+Description: TBD.
+License: Unlicensed
+Encoding: UTF-8
+LazyData: true
