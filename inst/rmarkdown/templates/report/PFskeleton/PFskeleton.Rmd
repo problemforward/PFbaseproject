@@ -1,0 +1,57 @@
+---
+title: "Basic Report"
+author: "Problem Forward"
+date: '`r format(Sys.Date(), "%B %d, %Y")`'
+header-includes:
+  \usepackage{graphicx}
+  \usepackage{fancyhdr}
+  \usepackage{textcomp}
+  \usepackage{float}
+  \usepackage{fontspec}
+  \AtBeginDocument{\let\maketitle\relax}
+output: 
+  pdf_document:
+      toc: true
+      toc_depth: 2
+      fig_caption: yes
+fontsize: 5pt
+geometry: "left=1cm,right=1cm"
+mainfont: Roboto
+---
+
+\makeatletter
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyhead[L]{\textbf{\@title} \\ \@author \\ \@date}
+  \fancyfoot[R]{\textcopyright Problem Forward 2018}
+}
+
+\pagestyle{plain}
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(fig.width=6, fig.height=4, fig.path='Figs/',
+                      warning=FALSE, message=FALSE, echo=FALSE,fig.pos = 'H')
+
+# Libraries we will use a lot:
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+library(viridis)
+
+options(dplyr.width = Inf)
+```
+
+
+
+
+```{r load_data}
+
+```
+
+## Overview
+
+## Recap
+
+## Discussion
+
+## Next Steps
