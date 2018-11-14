@@ -2,7 +2,13 @@
 
 # Problem Forward Project Template
 Standard Problem Forward project format / branding
-                                       
+
+## Issues
+
+1. Using fonts in .pdf and plots (Roboto used for prior reports)
+2. Unsure of ability to incorporate logo as part of a ggplot theme... needs more experimentation but may have to be manually added
+3. TeX formatting postponed until work computer received
+
 ## Overview 
 This is a README for the _____ that is a collaboration between Problem Forward and ____. This is an overview of the project and will contain iterative updates so we can follow what is happening in the file.
 
