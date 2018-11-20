@@ -24,7 +24,31 @@ This project has three main subfolders.
 * *products* has individual deliverables, such as presentations, figures, or apps that can be transferred to clients. This folder includes one sample report formatted to ProblemForward standards. Depending on the project and our client's needs, useful subfolders may within *products* could include:
     + *reports*, for documents and the like,
     + *figures*, for plots, images, and other graphics, or 
-    + *rsconnect* which is the container for Shiny apps.
+    + *rsconnect* which is required for Shiny apps.
+
+## Report Structure
+
+### Executive Summary
+How we explain that finding
+
+### Problem Definition
+What the problem was
+
+### Results
+
+#### How we interpret that finding/what it implies
+
+### Methods 
+
+#### What we did to generate a finding
+
+#### Any assumptions/clarifications
+
+### Next steps
+
+### Session Info
+ - For PF internal use / debugging
+ - Have it print to separate .pdf or whatever saved in same folder with timestamp
   
 ## Branding
 Whenever you can, include [links](www.problemforward.com) to our website.
