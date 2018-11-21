@@ -1,12 +1,32 @@
 Package: PFbaseproject
-Title: Generates base Problem Forward project template and branding
+Title: Generates base Problem Forward project template, packages, themes
 Version: 0.1.2
 Authors: Ken Morales <kmorales@problemforward.com>
 Maintainer: Ken Morales <kmorales@problemforward.com>
 Depends:
-    R(>=3.5)
-    knitr
+    tidyr
+    dplyr
+    dbplyr
+    odbc
+    DBI
+    googledrive
+    RSQLite
+    biglm
+    here
+    broom
     ggplot2
+    gridExtra
+    lubridate
+    modelr
+    forecast
+    readxl
+    knitr
+    stringr
+    viridis
+    timeDate
+    caret
+    lime
+    devtools
 Suggests: 
 Description: The functions are designed to help build a .
 License: Unlicensed

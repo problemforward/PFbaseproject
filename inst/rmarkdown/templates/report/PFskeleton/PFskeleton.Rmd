@@ -38,6 +38,7 @@ library(dplyr)
 library(ggplot2)
 library(viridis)
 library(devtools)
+library(pander)
 
 # Figure set-up
 knitr::opts_chunk$set(fig.width=6, fig.height=4, fig.path='Figs/',
@@ -84,15 +85,15 @@ What happens next. This could be:
  - further work we plan on the job (if it is ongoing)
  - questions that we have that the client can help us answer
 
-## Session Info
-The goal is to have this printed to a separate document and saved in same folder as the report with a timestamp.
-
-This section can be safely ignored. It is for Problem Forward internal use to be able to debug and undertand what versions of all the software we're using, so if there is an error later we can track down what caused it. 
-
-This report was compiled at `r Sys.time()`. The session information is:
-
-```{r}
-devtools::session_info()
+```{r sessioninfo}
+sesinfo <- pander_return(session_info())
+writeLines(c("# Report Session Info:",
+             "This section can be safely ignored by the client.",
+             "It is for Problem Forward internal use.",
+             "",
+             format(Sys.time(), tz = "EST"),
+             sesinfo), 
+           con = "sessioninfo.md")
 ```
 
 ## Contact
