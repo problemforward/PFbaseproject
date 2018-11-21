@@ -27,7 +27,7 @@ newproject <- function(){
                con = ".gitignore")
 
     # Download template .rmd readme
-    url <- "https://github.com/problemforward/base_project/blob/master/README.md"
-    destfile <- "README.md"
-    download.file(url, destfile)
+    # url <- "https://github.com/problemforward/base_project/blob/master/README.md"
+    # destfile <- "README.md"
+    # download.file(url, destfile)
   }

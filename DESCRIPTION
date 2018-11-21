@@ -27,7 +27,8 @@ Depends:
     caret
     lime
     devtools
-Suggests: 
+    hrbrthemes
+Remotes: hrbrmstr/hrbrthemes
 Description: The functions are designed to help build a .
 License: Unlicensed
 Encoding: UTF-8

@@ -5,9 +5,10 @@ Standard Problem Forward project format / branding
 
 ## Issues
 
-1. Unsure of ability to incorporate logo as part of a ggplot theme... needs more experimentation but may have to be manually added
-2. More generic files to add to .gitignore?
-3. Need Shiny app theme!
+1. Need to make generic README.md to pull from?
+2. Unsure of ability to incorporate logo as part of a ggplot theme... needs more experimentation but may have to be manually added
+3. More generic files to add to .gitignore?
+4. Need Shiny app theme!
 
 ## Overview 
 This is a README for the _____ that is a collaboration between Problem Forward and ____. This is an overview of the project and will contain iterative updates so we can follow what is happening in the file.

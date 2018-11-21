@@ -18,31 +18,24 @@
 #' @examples
 #' TBD.
 
-# Dependencies
-libraries <- c("ggplot2", "ggthemes", "dplyr", "reshape2", "grid", "lubridate", "stringr", "viridis", "extrafont", "png", "devtools", "hrbrthemes", "png")
-suppressPackageStartupMessages(
+# Problem Forward Theme
+theme_pf <- function(base_size=10, font=NA, discrete = TRUE, grid = "XY"){
+    # Dependencies
+    pkgs <- c("ggplot2", "dplyr", "reshape2", "grid", "viridis", "extrafont", "png", "hrbrthemes")
+    suppressPackageStartupMessages(
     lapply(libraries,
            library, character.only = TRUE)
     )
 
-# Install hrbrthemes
-devtools::install_github("hrbrmstr/hrbrthemes", force = TRUE)
+    # Font setup
+    if(!("Roboto Condensed" %in% fonts())){
+      hrbrthemes::import_roboto_condensed()
+      d <- read.csv(extrafont:::fonttable_file(), stringsAsFactors = FALSE)
+      d[grepl("Light", d$FontName),]$FamilyName <- font_rc_light
+      write.csv(d,extrafont:::fonttable_file(), row.names = FALSE)
+      loadfonts()
+    }
 
-options(stringsAsFactors = FALSE)
-
-# Font setup
-hrbrthemes::import_roboto_condensed()
-d <- read.csv(extrafont:::fonttable_file(), stringsAsFactors = FALSE)
-d[grepl("Light", d$FontName),]$FamilyName <- font_rc_light
-write.csv(d,extrafont:::fonttable_file(), row.names = FALSE)
-loadfonts()
-
-# Palette Set Up
-# Interested in using Viridis - plasma palette
-# https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html
-
-# Problem Forward Theme
-theme_pf <- function(base_size=10, font=NA, discrete = TRUE, grid = "XY"){
     # Logo setup
     logo <- readPNG("images/PFlogo.png")
     g <- rasterGrob(logo, interpolate=TRUE)
