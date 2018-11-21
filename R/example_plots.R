@@ -2,6 +2,9 @@
 ## Example plots
 ##
 
+library(ggplot2)
+library(hrbrthemes)
+
 ##
 ## Scatterplot Example
 ##
@@ -94,7 +97,7 @@ example4_pf
 ## Area chart
 ##
 
-example5 <- ggplot(uspopage, aes(x=Year, y=Thousands, fill = AgeGroup)) +
+example5 <- ggplot(gcookbook::uspopage, aes(x=Year, y=Thousands, fill = AgeGroup)) +
   geom_area() +
   scale_x_continuous(expand=c(0,0)) +
   scale_y_comma() +

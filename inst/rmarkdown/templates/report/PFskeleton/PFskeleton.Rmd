@@ -3,55 +3,103 @@ title: "Basic Report"
 author: "Problem Forward"
 date: '`r format(Sys.Date(), "%B %d, %Y")`'
 header-includes:
-  \usepackage{graphicx}
-  \usepackage{fancyhdr}
-  \usepackage{textcomp}
-  \usepackage{float}
-  \usepackage{fontspec}
-  \AtBeginDocument{\let\maketitle\relax}
+    \usepackage{graphicx}
+    \usepackage{fancyhdr}
+    \usepackage{textcomp}
+    \usepackage{float}
+    \usepackage{fontspec}
+    \AtBeginDocument{\let\maketitle\relax}
 output: 
-  pdf_document:
-      toc: true
-      toc_depth: 2
-      fig_caption: yes
+    pdf_document:
+        latex_engine: xelatex
+        toc: true
+        toc_depth: 2
+        fig_caption: yes
 fontsize: 5pt
-geometry: "left=1cm,right=1cm"
+geometry: "left=1cm,right=1cm,top=3cm,bottom=3cm"
 mainfont: Roboto
 ---
 
 \makeatletter
+\graphicspath{{../../../../../images/}}
 \fancypagestyle{plain}{
-  \fancyhf{}
-  \fancyhead[L]{\textbf{\@title} \\ \@author \\ \@date}
-  \fancyfoot[R]{\textcopyright Problem Forward 2018}
+    \fancyhf{}
+    \fancyhead[L]{\textbf{\@title} \\ \@author \\ \@date}
+    \fancyhead[R]{\includegraphics[height=1cm]{smalllogo_test.png}} 
+    \fancyfoot[R]{\textcopyright Problem Forward 2018}
 }
 
 \pagestyle{plain}
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(fig.width=6, fig.height=4, fig.path='Figs/',
-                      warning=FALSE, message=FALSE, echo=FALSE,fig.pos = 'H')
-
-# Libraries we will use a lot:
+# Libraries we will use a lot in reports:
 library(tidyr)
 library(dplyr)
 library(ggplot2)
 library(viridis)
+library(devtools)
+
+# Figure set-up
+knitr::opts_chunk$set(fig.width=6, fig.height=4, fig.path='Figs/',
+                      warning=FALSE, message=FALSE, echo=FALSE,fig.pos = 'H')
 
 options(dplyr.width = Inf)
 ```
 
 
-
-
 ```{r load_data}
-
+# Load any data for the report here
 ```
 
-## Overview
+# Executive Summary
+The meat of the report. For our client's who just want the answer quickly, it's right here up front as the most important tidbit. We can talk executive summary formatting soon.
 
-## Recap
+# Report
+A more detailed step-by-step guide for clients with the following sections:
 
-## Discussion
+## Problem Definition
+This section essentially describes what the request from the client was, and how we defined the problem as a data science question. 
 
-## Next Steps
+## Results
+Basically, everything that popped out at the end of our final project for the client.
+
+For example, this is a great place to put descriptive plots:
+
+<center>
+![](example1.png)
+</center>
+
+### Interpretation
+How we interpret that finding / what it implies
+
+## Methods 
+What we did to generate a finding
+
+### Assumptions
+Any assumptions our team made during the process, or clarifications that are required
+
+## Next steps
+What happens next. This could be:
+ - following up with client in the following week to review the project
+ - further work we plan on the job (if it is ongoing)
+ - questions that we have that the client can help us answer
+
+## Session Info
+The goal is to have this printed to a separate document and saved in same folder as the report with a timestamp.
+
+This section can be safely ignored. It is for Problem Forward internal use to be able to debug and undertand what versions of all the software we're using, so if there is an error later we can track down what caused it. 
+
+This report was compiled at `r Sys.time()`. The session information is:
+
+```{r}
+devtools::session_info()
+```
+
+## Contact
+To follow up, please reach out to your Problem Forward liaison or email us here:
+
+Problem Forward
+
+www.problemforward.com
+
+jspm@problemforward.com

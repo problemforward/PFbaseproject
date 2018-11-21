@@ -1,25 +1,29 @@
-# Title: Problem Forward GGPlot Themes
-# Author: Ken Morales
-# Contact: kmorales@problemforward.com
-# Date Created: 11.14.2018
-# Purpose: To generate a template for Problem Forward plots (and graphics?)
-
-#####
-
-###
-### Problem Forward Theme
-###
-
-##
-## Setup
-##
+#' Applies the Problem Forward ggplot2 theme.
+#'
+#' You can \code{+ theme_pf()} to an existing ggplot to apply our branding.
+#' It should be one of the first things you do after adding in the ggplot
+#' \code{aes} and \code{geom}, so that you can fiddle with the rest of the
+#' layout afterward.
+#'
+#' @param base_size base font size for the plot; defaults to \code{10}
+#' @param font font family to use; defaults to \code{"Roboto"}
+#' @param discrete use a discrete color palette; defaults to \code{TRUE}
+#' @param grid major axis grid lines in plot; defaults to \code{"XY"}.
+#'        options include: \code{"X"} for only X grid lines,
+#'                         \code{"Y"} for only Y grid lines,
+#'                         \code{"XY"} for both.
+#'
+#' @export
+#'
+#' @examples
+#' TBD.
 
 # Dependencies
-libraries <- c("ggplot2", "ggthemes", "dplyr", "reshape2", "grid", "lubridate", "stringr", "viridis", "extrafont", "png", "devtools", "hrbrthemes", "gcookbook", "png")
+libraries <- c("ggplot2", "ggthemes", "dplyr", "reshape2", "grid", "lubridate", "stringr", "viridis", "extrafont", "png", "devtools", "hrbrthemes", "png")
 suppressPackageStartupMessages(
-  lapply(libraries,
-         require, character.only = TRUE)
-  )
+    lapply(libraries,
+           library, character.only = TRUE)
+    )
 
 # Install hrbrthemes
 devtools::install_github("hrbrmstr/hrbrthemes", force = TRUE)
@@ -39,29 +43,29 @@ loadfonts()
 
 # Problem Forward Theme
 theme_pf <- function(base_size=10, font=NA, discrete = TRUE, grid = "XY"){
-  # Logo setup
-  logo <- readPNG("images/PFlogo.png")
-  g <- rasterGrob(logo, interpolate=TRUE)
+    # Logo setup
+    logo <- readPNG("images/PFlogo.png")
+    g <- rasterGrob(logo, interpolate=TRUE)
 
-  # ggplot commands
-  list(theme_ipsum_rc(base_size = base_size,
-                      base_family = font,
-                      grid = grid
-                      ),
-       labs(caption="Brought to you by Problem Forward"),
-       # Color scales
-       scale_fill_viridis(option = "plasma",
-                          end = 0.8,
-                          discrete = discrete),
-       scale_colour_viridis(option = "plasma",
+    # ggplot commands
+    list(theme_ipsum_rc(base_size = base_size,
+                        base_family = font,
+                        grid = grid
+                        ),
+         labs(caption="Brought to you by Problem Forward"),
+         # Color scales
+         scale_fill_viridis(option = "plasma",
+                            end = 0.8,
+                            discrete = discrete),
+         scale_colour_viridis(option = "plasma",
                             end = 0.8,
                             discrete = discrete)
-       #  Logo
-      #   annotation_custom(g,
-      #                    xmin=-Inf,
-      #                    xmax=Inf,
-      #                    ymin=-Inf,
-      #                    ymax=Inf)
+         # Logo
+         # annotation_custom(g,
+                           # xmin=-Inf,
+                           # xmax=Inf,
+                           # ymin=-Inf,
+                           # ymax=Inf)
     # Below is for more fine control if desired
 
     # Strip background colors
