@@ -45,8 +45,6 @@ knitr::opts_chunk$set(fig.width=6, fig.height=4, fig.path='Figs/',
                       warning=FALSE, message=FALSE, echo=FALSE,fig.pos = 'H')
 
 options(dplyr.width = Inf)
-
-# NONSENSE COMMENT LINE
 ```
 
 
