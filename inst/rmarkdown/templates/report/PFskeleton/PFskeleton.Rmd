@@ -40,6 +40,8 @@ library(viridis)
 library(devtools)
 library(pander)
 
+# NONSENSE COMMENT
+
 # Figure set-up
 knitr::opts_chunk$set(fig.width=6, fig.height=4, fig.path='Figs/',
                       warning=FALSE, message=FALSE, echo=FALSE,fig.pos = 'H')
