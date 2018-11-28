@@ -21,11 +21,10 @@ mainfont: Roboto
 ---
 
 \makeatletter
-\graphicspath{{../../../../../images/}}
 \fancypagestyle{plain}{
     \fancyhf{}
     \fancyhead[L]{\textbf{\@title} \\ \@author \\ \@date}
-    \fancyhead[R]{\includegraphics[height=1cm]{smalllogo_test.png}} 
+    \fancyhead[R]{\includegraphics[height=1cm]{PFlogo.png}} 
     \fancyfoot[R]{\textcopyright Problem Forward 2018}
 }
 
