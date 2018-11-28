@@ -20,12 +20,6 @@
 
 # Problem Forward Theme
 theme_pf <- function(base_size=10, font=NA, discrete = TRUE, grid = "XY"){
-    # Dependencies
-    pkgs <- c("ggplot2", "dplyr", "reshape2", "grid", "viridis", "extrafont", "png", "hrbrthemes")
-    suppressPackageStartupMessages(
-    lapply(pkgs,
-           library, character.only = TRUE)
-    )
 
     # Font setup
     if(!("Roboto Condensed" %in% fonts())){
@@ -37,8 +31,8 @@ theme_pf <- function(base_size=10, font=NA, discrete = TRUE, grid = "XY"){
     }
 
     # Logo setup
-    logo <- readPNG("images/PFlogo.png")
-    g <- rasterGrob(logo, interpolate=TRUE)
+    # logo <- readPNG("images/PFlogo.png")
+    # g <- rasterGrob(logo, interpolate=TRUE)
 
     # ggplot commands
     list(theme_ipsum_rc(base_size = base_size,
