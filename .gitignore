@@ -9,3 +9,7 @@ googlesheets_token.rds
 .Rproj.user
 pander*.md
 sessioninfo.html
+skeleton.pdf
+sessioninfo.md
+skeletons/Figs/
+plot-1.png

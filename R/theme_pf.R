@@ -27,10 +27,8 @@ theme_pf <- function(base_size=10, font=NA, discrete = TRUE, grid = "XY"){
       d <- read.csv(extrafont:::fonttable_file(), stringsAsFactors = FALSE)
       d[grepl("Light", d$FontName),]$FamilyName <- font_rc_light
       write.csv(d,extrafont:::fonttable_file(), row.names = FALSE)
+      extrafont::loadfonts(quiet=TRUE)
     }
-
-    # Load fonts and see if this break it
-    extrafont::loadfonts()
     
     # Logo setup
     # logo <- readPNG("images/PFlogo.png")

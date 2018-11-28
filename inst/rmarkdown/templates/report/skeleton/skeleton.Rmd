@@ -34,6 +34,7 @@ mainfont: Roboto
 ```{r setup, include=FALSE}
 # Libraries we will use a lot in reports:
 library(tidyr)
+library(knitr)
 library(dplyr)
 library(ggplot2)
 library(viridis)
@@ -41,10 +42,15 @@ library(devtools)
 library(pander)
 library(extrafont)
 library(hrbrthemes)
+library(PFbaseproject)
+
+# Load fonts
+extrafont::loadfonts(quiet=TRUE)
 
 # Figure set-up
 knitr::opts_chunk$set(fig.width=6, fig.height=4, fig.path='Figs/',
-                      warning=FALSE, message=FALSE, echo=FALSE,fig.pos = 'H')
+                      warning=FALSE, message=FALSE, echo=FALSE,fig.pos = 'H',
+                      dev = "png")
 
 options(dplyr.width = Inf)
 ```
