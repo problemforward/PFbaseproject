@@ -24,7 +24,8 @@ Depends:
     caret,
     lime,
     devtools,
-    hrbrthemes
+    hrbrthemes,
+    extrafont
 Remotes: hrbrmstr/hrbrthemes
 Description: The functions are designed to help build a .
 License: Unlicensed
