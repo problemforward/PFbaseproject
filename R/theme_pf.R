@@ -23,7 +23,7 @@ theme_pf <- function(base_size=10, font=NA, discrete = TRUE, grid = "XY"){
     # Dependencies
     pkgs <- c("ggplot2", "dplyr", "reshape2", "grid", "viridis", "extrafont", "png", "hrbrthemes")
     suppressPackageStartupMessages(
-    lapply(libraries,
+    lapply(pkgs,
            library, character.only = TRUE)
     )
 
