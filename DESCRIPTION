@@ -27,7 +27,11 @@ Depends:
     hrbrthemes,
     extrafont
 Remotes: hrbrmstr/hrbrthemes
-Description: The functions are designed to help build a .
+Description: The functions are designed to help build a new Problem Forward
+    project. It's main purposes are to a) load commonly used packages, b) 
+    provide a function that generate base project folder architecture, c)
+    provide a template .pdf report for clients, and d) provide our PF branded
+    ggplot theme.
 License: Unlicensed
 Encoding: UTF-8
 LazyData: true

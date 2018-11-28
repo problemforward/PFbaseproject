@@ -1,4 +1,4 @@
-*.Rproj
+project.Rproj
 .Rhistory
 .RData
 .Ruserdata

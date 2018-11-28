@@ -1,5 +1,5 @@
 ---
-title: "Basic Report"
+title: "PF Basic Report"
 author: "Problem Forward"
 date: '`r format(Sys.Date(), "%B %d, %Y")`'
 header-includes:
@@ -39,8 +39,8 @@ library(ggplot2)
 library(viridis)
 library(devtools)
 library(pander)
-
-# NONSENSE COMMENT
+library(extrafont)
+library(hrbrthemes)
 
 # Figure set-up
 knitr::opts_chunk$set(fig.width=6, fig.height=4, fig.path='Figs/',
@@ -68,9 +68,15 @@ Basically, everything that popped out at the end of our final project for the cl
 
 For example, this is a great place to put descriptive plots:
 
-<center>
-![](example1.png)
-</center>
+```{r plot}
+example1 <- ggplot(mtcars, aes(mpg, wt)) +
+  geom_point(aes(color=factor(carb))) +
+  labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
+       title="Seminal ggplot2 scatterplot example",
+       subtitle="A plot that is only useful for demonstration purposes")
+
+example1 + theme_pf()
+```
 
 ### Interpretation
 How we interpret that finding / what it implies
