@@ -7,3 +7,5 @@ token.rds
 gs_token.rds
 googlesheets_token.rds
 .Rproj.user
+pander*.md
+sessioninfo.html
