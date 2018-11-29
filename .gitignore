@@ -8,7 +8,9 @@ gs_token.rds
 googlesheets_token.rds
 .Rproj.user
 pander*.md
-sessioninfo.html
+sessioninfo.*
 skeleton.pdf
-sessioninfo.md
 plot-1.png
+PFbaseproject.Rcheck/
+PFbaseproject*.tar.gz
+PFbaseproject*.tgz

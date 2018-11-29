@@ -1,2 +1,5 @@
 ^PFbaseproject\.Rproj$
 ^\.Rproj\.user$
+^PFbaseproject\.Rcheck$
+^PFbaseproject.*\.tar\.gz$
+^PFbaseproject.*\.tgz$

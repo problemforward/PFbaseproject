@@ -3,12 +3,24 @@
 # Problem Forward Project Template
 Standard Problem Forward project format / branding
 
+## To install:
+
+Run:
+
+> `devtools::install_github("problemforward/PFbaseproject, auth_token = "YOUR TOKEN")`
+
+with your Personal Access Token (PAT) passed to the `auth_token` argument.
+
 ## Issues
 
 1. Need to make generic README.md to pull from?
 2. Unsure of ability to incorporate logo as part of a ggplot theme... needs more experimentation but may have to be manually added
 3. More generic files to add to .gitignore?
 4. Need Shiny app theme!
+
+Below here is a generic README.md template as a guide to our clients who may view our GitHub repos.
+
+## Generic README.md stuff below:
 
 ## Overview 
 This is a README for the _____ that is a collaboration between Problem Forward and ____. This is an overview of the project and will contain iterative updates so we can follow what is happening in the file.
