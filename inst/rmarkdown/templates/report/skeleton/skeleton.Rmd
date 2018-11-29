@@ -99,14 +99,17 @@ What happens next. This could be:
  - questions that we have that the client can help us answer
 
 ```{r sessioninfo}
-sesinfo <- pander_return(session_info())
+# This code chunk generates a .md file with the session info for Problem Forward to use for debugging purposes. It can be safely ignored by the client.
+
 writeLines(c("# Report Session Info:",
-             "This section can be safely ignored by the client.",
-             "It is for Problem Forward internal use.",
-             "",
-             format(Sys.time(), tz = "EST"),
-             sesinfo), 
-           con = "sessioninfo.md")
+              "This section can be safely ignored by the client.",
+              "It is for Problem Forward internal use.",
+              "",
+              format(Sys.time(), tz = "EST"),
+              "",
+              pander(session_info())), 
+            con = "sessioninfo.md",
+            sep = "\n")
 ```
 
 ## Contact
