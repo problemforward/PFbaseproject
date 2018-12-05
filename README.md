@@ -7,7 +7,7 @@ Standard Problem Forward project format / branding
 
 Run:
 
-> `devtools::install_github("problemforward/PFbaseproject, auth_token = "YOUR TOKEN")`
+> `devtools::install_github("problemforward/PFbaseproject", auth_token = "YOUR TOKEN")`
 
 with your Personal Access Token (PAT) passed to the `auth_token` argument.
 
