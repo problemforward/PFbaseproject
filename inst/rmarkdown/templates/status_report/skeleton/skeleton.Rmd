@@ -1,5 +1,5 @@
 ---
-title: "PF Basic Report"
+title: "PF Status Update"
 author: "Problem Forward"
 date: '`r format(Sys.Date(), "%B %d, %Y")`'
 header-includes:
@@ -67,13 +67,14 @@ options(dplyr.width = Inf)
 # Load any data for the report here
 ```
 
-# Executive Summary
-The meat of the report. For our client's who just want the answer quickly, it's right here up front as the most important tidbit. We can talk executive summary formatting soon.
+# Project Description
 
-# Report
-A more detailed step-by-step guide for clients with the following sections:
+# Overall Status
 
-## Problem Definition
+# Status Summary
+
+
+## Workstreams
 This section essentially describes what the request from the client was, and how we defined the problem as a data science question. 
 
 ## Results
