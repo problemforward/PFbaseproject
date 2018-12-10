@@ -1,5 +1,5 @@
 ---
-title: "PF Status Update"
+title: "Status Report - Project X"
 author: "Problem Forward"
 date: '`r format(Sys.Date(), "%B %d, %Y")`'
 header-includes:
@@ -8,6 +8,7 @@ header-includes:
     \usepackage{textcomp}
     \usepackage{float}
     \usepackage{fontspec}
+    \usepackage{multicol}
     \AtBeginDocument{\let\maketitle\relax}
 output: 
     pdf_document:
@@ -42,6 +43,7 @@ library(pander)
 library(extrafont)
 library(hrbrthemes)
 library(PFbaseproject)
+library(kableExtra)
 
 # Load fonts
 extrafont::loadfonts(quiet=TRUE)
@@ -67,45 +69,69 @@ options(dplyr.width = Inf)
 # Load any data for the report here
 ```
 
-# Project Description
+# 1. Summary
 
-# Overall Status
+## 1.1. Project Description
 
-# Status Summary
+Short description of the project.
 
-
-## Workstreams
-This section essentially describes what the request from the client was, and how we defined the problem as a data science question. 
-
-## Results
-Basically, everything that popped out at the end of our final project for the client.
-
-For example, this is a great place to put descriptive plots:
-
-```{r plot}
-example1 <- ggplot(mtcars, aes(mpg, wt)) +
-  geom_point(aes(color=factor(carb))) +
-  labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
-       title="Seminal ggplot2 scatterplot example",
-       subtitle="A plot that is only useful for demonstration purposes")
-
-example1 + theme_pf()
+## 1.2. Overall Status
+  
+```{r projectstatus, out.height='50pt', out.width='50pt'}
+# Other options are red_icon.png and yellow_icon.png
+include_graphics("figs/green_icon.png")
 ```
 
-### Interpretation
-How we interpret that finding / what it implies
+This obviously looks terrible, need to work on it. Overall status of the project (green, yellow, red). Graphic options in the `fig/` folder include:
 
-## Methods 
-What we did to generate a finding
+ - `green_icon.png`
+ - `yellow_icon.png`
+ - `red_icon.png`
 
-### Assumptions
-Any assumptions our team made during the process, or clarifications that are required
+## 1.3. Status Summary
 
-## Next steps
+ - A bulleted list
+ - Highlighting the most important
+ - Things that happened since the last status report
+
+# 2. Report
+
+## 2.1. Workstreams
+
+Below is a simple rMarkdown table. We may need to swap to a `kable` table, but let's see if this works for now.
+
+Note that the lines don't have to align for the table to print:
+
+| **Workstream**  | **Trend** | **Comments**  |
+|-----|------|-----|
+| Project component |\textcolor{green}{Green} | A comment about this particular project component |
+| |\textcolor{yellow}{Yellow} | |
+| |\textcolor{red}{Red} | |
+
+## 2.2. Recent Accomplishments and Updates
+
+This is a great place to showcase any recent accomplishmentsm, like screenshots of an app
+
+| **Date** | **Description**
+|-----|-----|
+| 12.10.2018  | Briefly describe update here |
+
+## 2.3. Issues
+
+| **Date** | **Issue** | **Assigned** | **Due Date** |
+|-----|-----|-----|-----|
+| 12.10.2018  | Briefly describe problem / to do item here  | PF staff member | 12.14.2018 |
+
+## 2.4. Next steps
+
 What happens next. This could be:
  - following up with client in the following week to review the project
- - further work we plan on the job (if it is ongoing)
+ - further work we plan on the job (if it is on going)
  - questions that we have that the client can help us answer
+
+| **Date** | **Upcoming Activities** |
+|-----|-----|
+| 12.14.2018  | Meet with client  |
 
 ```{r sessioninfo}
 # This code chunk generates a .md file with the session info for Problem Forward to use for debugging purposes. It can be safely ignored by the client.
@@ -121,11 +147,12 @@ writeLines(c("# Report Session Info:",
             sep = "\n")
 ```
 
-## Contact
+# 3. Contact
+
 To follow up, please reach out to your Problem Forward liaison or email us here:
 
-Problem Forward
+*Problem Forward*
 
-www.problemforward.com
+<http://www.problemforward.com>
 
-jspm@problemforward.com
+[jtleek@problemforward.com](mailto:jtleek@problemforward.com)

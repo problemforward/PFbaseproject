@@ -42,6 +42,7 @@ library(pander)
 library(extrafont)
 library(hrbrthemes)
 library(PFbaseproject)
+library(kableExtra)
 
 # Load fonts
 extrafont::loadfonts(quiet=TRUE)
@@ -67,16 +68,16 @@ options(dplyr.width = Inf)
 # Load any data for the report here
 ```
 
-# Executive Summary
+# 1. Executive Summary
 The meat of the report. For our client's who just want the answer quickly, it's right here up front as the most important tidbit. We can talk executive summary formatting soon.
 
-# Report
+# 2. Report
 A more detailed step-by-step guide for clients with the following sections:
 
-## Problem Definition
+## 2.1. Problem Definition
 This section essentially describes what the request from the client was, and how we defined the problem as a data science question. 
 
-## Results
+## 2.2. Results
 Basically, everything that popped out at the end of our final project for the client.
 
 For example, this is a great place to put descriptive plots:
@@ -91,16 +92,16 @@ example1 <- ggplot(mtcars, aes(mpg, wt)) +
 example1 + theme_pf()
 ```
 
-### Interpretation
+### 2.2.1. Interpretation
 How we interpret that finding / what it implies
 
-## Methods 
+## 2.3. Methods 
 What we did to generate a finding
 
-### Assumptions
+### 2.3.1. Assumptions
 Any assumptions our team made during the process, or clarifications that are required
 
-## Next steps
+## 2.4. Next steps
 What happens next. This could be:
  - following up with client in the following week to review the project
  - further work we plan on the job (if it is ongoing)
@@ -120,11 +121,12 @@ writeLines(c("# Report Session Info:",
             sep = "\n")
 ```
 
-## Contact
+# 3. Contact
+
 To follow up, please reach out to your Problem Forward liaison or email us here:
 
 Problem Forward
 
-www.problemforward.com
+<http://www.problemforward.com>
 
-jspm@problemforward.com
+[jtleek@problemforward.com](mailto:jtleek@problemforward.com)
