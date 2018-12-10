@@ -11,13 +11,6 @@ Run:
 
 with your Personal Access Token (PAT) passed to the `auth_token` argument.
 
-## Issues
-
-1. Need to make generic README.md to pull from?
-2. Unsure of ability to incorporate logo as part of a ggplot theme... needs more experimentation but may have to be manually added
-3. More generic files to add to .gitignore?
-4. Need Shiny app theme!
-
 Below here is a generic README.md template as a guide to our clients who may view our GitHub repos.
 
 ## Generic README.md stuff below:
@@ -39,26 +32,6 @@ This project has three main subfolders.
     + *figures*, for plots, images, and other graphics, or 
     + *rsconnect* which is required for Shiny apps.
 
-### Report Structure
-
-#### Executive Summary
-How we explain that finding
-
-#### Problem Definition
-What the problem was
-
-#### Results
-How we interpret that finding/what it implies
-
-#### Methods 
-What we did to generate a finding, including any assumptions/clarifications
-
-#### Next steps
-
-#### Session Info
- - For PF internal use / debugging
- - Have it print to separate .pdf or whatever saved in same folder with timestamp
-  
 ## Branding
 Whenever you can, include [links](www.problemforward.com) to our website.
 
