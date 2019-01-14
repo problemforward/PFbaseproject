@@ -46,7 +46,9 @@ theme_pf <- function(base_size=10, font=NA, discrete = TRUE, grid = "XY"){
                             discrete = discrete),
          scale_colour_viridis(option = "plasma",
                             end = 0.8,
-                            discrete = discrete)
+                            discrete = discrete),
+         theme(plot.title = element_text(size=11)),
+         theme(plot.subtitle = element_text(size=10))
          # Logo
          # annotation_custom(g,
                            # xmin=-Inf,

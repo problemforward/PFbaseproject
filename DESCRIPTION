@@ -1,6 +1,6 @@
 Package: PFbaseproject
 Title: Generates base Problem Forward project template, packages, themes
-Version: 0.1.7
+Version: 0.1.8
 Authors: Ken Morales <kmorales@problemforward.com>
 Maintainer: Ken Morales <kmorales@problemforward.com>
 Depends:
@@ -31,8 +31,8 @@ Depends:
 Description: The functions are designed to help build a new Problem Forward
     project. It's main purposes are to a) load commonly used packages, b) 
     provide a function that generate base project folder architecture, c)
-    provide template .pdf reports for clients (a generic report and status
-    update report), and d) provide our PF branded ggplot theme.
+    provide template .pdf and .html reports for clients (a generic report
+    and status update report), and d) provide our PF branded ggplot theme.
 License: Unlicensed
 Encoding: UTF-8
 LazyData: true

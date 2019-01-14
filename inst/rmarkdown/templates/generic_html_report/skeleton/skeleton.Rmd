@@ -1,39 +1,25 @@
 ---
-title: "PF Basic Report"
+title: "PF Generitc HTML Report"
+subtitle: "Subtitle"
 author: "Problem Forward"
 date: '`r format(Sys.Date(), "%B %d, %Y")`'
-header-includes:
-    \usepackage{graphicx}
-    \usepackage{fancyhdr}
-    \usepackage{textcomp}
-    \usepackage{float}
-    \usepackage{fontspec}
-    \AtBeginDocument{\let\maketitle\relax}
 output: 
-    pdf_document:
-        latex_engine: xelatex
+    html_document:
+        theme: yeti
         toc: true
-        toc_depth: 2
+        toc_depth: 3
+        toc_float: 
+            collapsed: false
         fig_caption: yes
-fontsize: 5pt
-geometry: "left=1cm,right=1cm,top=3cm,bottom=3cm"
+        code_folding: hide
 mainfont: Roboto
 ---
-
-\makeatletter
-\fancypagestyle{plain}{
-    \fancyhf{}
-    \fancyhead[L]{\textbf{\@title} \\ \@author \\ \@date}
-    \fancyhead[R]{\includegraphics[height=1cm]{PFlogo.png}} 
-    \fancyfoot[R]{\textcopyright Problem Forward 2018}
-}
-
-\pagestyle{plain}
 
 ```{r setup, include=FALSE}
 # Libraries we will use a lot in reports:
 library(tidyr)
 library(knitr)
+library(htmltools)
 library(dplyr)
 library(ggplot2)
 library(viridis)
@@ -63,6 +49,12 @@ knitr::opts_chunk$set(fig.width=6,
 options(dplyr.width = Inf)
 ```
 
+```{r logo, echo=FALSE}
+# Include PF logo
+logo = htmltools::img(src = knitr::image_uri("PFlogo.png"),
+               alt = 'PFlogo', 
+               style = 'position:absolute; top:0; right:0; padding:4px;')
+```
 
 ```{r load_data}
 # Load any data for the report here
@@ -92,7 +84,28 @@ example1 <- ggplot(mtcars, aes(mpg, wt)) +
 example1 + theme_pf()
 ```
 
-### 2.2.1. Interpretation
+Or a HTML formatted table:
+
+```{r table}
+# Use kable to format a dataframe into a nice table
+kable(mtcars[1:8,]) %>%
+  # Pipe to kable_styling() for default 
+  kable_styling()
+```
+
+If you want to use tabbed content, be sure to use the .tabset-fade and .tabset-pills options:
+
+### Tabbed Content {.tabset .tabset-fade .tabset-pills}
+
+#### Tab 1
+
+Here is Tab 1!
+
+#### Tab 2
+
+Here is Tab 2!
+
+### 2.2.1.Interpretation
 How we interpret that finding / what it implies
 
 ## 2.3. Methods 
@@ -101,7 +114,7 @@ What we did to generate a finding
 ### 2.3.1. Assumptions
 Any assumptions our team made during the process, or clarifications that are required
 
-## 2.4. Next steps
+# 3. Next steps
 
 What happens next. This could be:
  - following up with client in the following week to review the project
@@ -122,7 +135,7 @@ writeLines(c("# Report Session Info:",
             sep = "\n")
 ```
 
-# 3. Contact
+# 4. Contact
 
 To follow up, please reach out to your Problem Forward liaison or email us here:
 

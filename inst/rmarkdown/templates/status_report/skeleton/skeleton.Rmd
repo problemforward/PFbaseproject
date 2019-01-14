@@ -76,13 +76,12 @@ options(dplyr.width = Inf)
 Short description of the project.
 
 ## 1.2. Overall Status
-  
-```{r projectstatus, out.height='50pt', out.width='50pt'}
-# Other options are red_icon.png and yellow_icon.png
-include_graphics("figs/green_icon.png")
-```
 
-This obviously looks terrible, need to work on it. Overall status of the project (green, yellow, red). Graphic options in the `fig/` folder include:
+Overall status of the project (green, yellow, red).
+
+The current project status is: `r include_graphics("figs/green_icon.png")`
+
+This obviously looks terrible, need to work on it. Graphic options in the `fig/` folder include:
 
  - `green_icon.png`
  - `yellow_icon.png`
