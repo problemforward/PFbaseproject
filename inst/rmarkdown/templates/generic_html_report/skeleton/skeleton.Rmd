@@ -11,7 +11,6 @@ output:
         toc_float: 
             collapsed: false
         fig_caption: yes
-        code_folding: hide
 mainfont: Roboto
 ---
 
@@ -49,11 +48,14 @@ knitr::opts_chunk$set(fig.width=6,
 options(dplyr.width = Inf)
 ```
 
-```{r logo, echo=FALSE}
+```{r logo}
 # Include PF logo
-logo = htmltools::img(src = knitr::image_uri("PFlogo.png"),
+htmltools::img(src = knitr::image_uri("PFlogo.png"), 
                alt = 'PFlogo', 
-               style = 'position:absolute; top:0; right:0; padding:4px;')
+               style = 'position:absolute; top:0; right:0; padding:10px;',
+               height = "50%",
+               width = "25%",
+               align = "right")
 ```
 
 ```{r load_data}
