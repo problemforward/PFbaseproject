@@ -20,9 +20,7 @@ newproject <- function(){
             ".RData",
             ".Ruserdata",
             ".httr-oauth",
-            "token.rds",
-            "gs_token.rds",
-            "googlesheets_token.rds")
+            "data/")
     writeLines(gi,
                con = ".gitignore")
 
