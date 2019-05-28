@@ -15,7 +15,8 @@ newproject <- function(){
     lapply(directories, dir.create)
 
     # Create .gitignore
-    gi <- c(".Rproj.user",
+    gi <- c("*.Rproj",
+            ".Rproj.user",
             ".Rhistory",
             ".RData",
             ".Ruserdata",
