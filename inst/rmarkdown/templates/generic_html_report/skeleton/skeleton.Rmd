@@ -1,61 +1,101 @@
 ---
-title: "PF Generitc HTML Report"
+title: "HTML Report"
 subtitle: "Subtitle"
-author: "Problem Forward"
+author: "Name"
 date: '`r format(Sys.Date(), "%B %d, %Y")`'
 output: 
-    html_document:
-        theme: yeti
-        toc: true
-        toc_depth: 3
-        toc_float: 
-            collapsed: false
-        fig_caption: yes
+  html_document:
+    theme: spacelab
+    toc: true
+    toc_depth: 3
+    toc_float: 
+      collapsed: true
+editor_options:
+  chunk_output_type: console
 mainfont: Roboto
 ---
 
 ```{r setup, include=FALSE}
 # Libraries we will use a lot in reports:
-library(tidyr)
+library(tidyverse)
 library(knitr)
-library(htmltools)
-library(dplyr)
-library(ggplot2)
-library(viridis)
-library(devtools)
+library(plotly)
 library(pander)
-library(extrafont)
-library(hrbrthemes)
-library(PFbaseproject)
 library(kableExtra)
+# library(extrafont)
+# library(hrbrthemes)
+# library(PFbaseproject)
+
+
 
 # Load fonts
-extrafont::loadfonts(quiet=TRUE)
+# extrafont::loadfonts(quiet=TRUE)
 
 # Figure set-up
-knitr::opts_chunk$set(fig.width=6,
-                      fig.height=4,
-                      fig.align="center",
-                      fig.path='figs/',
-                      warning=FALSE,
-                      message=FALSE,
-                      echo=FALSE,
-                      fig.pos = 'H',
-                      dpi = 300,
-                      dev = "png"
-                      )
-
+# knitr::opts_chunk$set(fig.width=6,
+#                       fig.height=4,
+#                       fig.align="center",
+#                       fig.path='figs/',
+#                       warning=FALSE,
+#                       message=FALSE,
+#                       echo=FALSE,
+#                       fig.pos = 'H',
+#                       dpi = 300,
+#                       dev = "png"
+#                       )
+# Options
+knitr::opts_chunk$set(echo = FALSE,
+                      warning = FALSE,
+                      message = FALSE)
+theme_set(theme_minimal())
 options(dplyr.width = Inf)
+
+# Helper function for plotly
+clean_ggplotly <- function(
+  p = ggplot2::last_plot(),
+  width = NULL,
+  height = NULL,
+  tooltip = "all",
+  dynamicTicks = FALSE,
+  layerData = 1,
+  originalData = TRUE,
+  source = "A",
+  ...
+) {
+
+  stopifnot(requireNamespace("plotly"))
+
+  plotly::config(
+    plotly::ggplotly(
+      p = p,
+      width = width,
+      height = height,
+      tooltip = tooltip,
+      dynamicTicks = dynamicTicks,
+      layerData = layerData,
+      originalData = originalData,
+      source = source,
+      ... = ...
+    ),
+    displaylogo = FALSE,
+    modeBarButtonsToRemove = c(
+      "sendDataToCloud",
+      "zoom2d", "zoomIn2d", "zoomOut2d",
+      "pan2d", "select2d", "lasso2d", "autoScale2d"
+    )
+  )
+}
 ```
 
-```{r logo}
+```{r test}
 # Include PF logo
 htmltools::img(src = knitr::image_uri("PFlogo.png"), 
                alt = 'PFlogo', 
-               style = 'position:absolute; top:0; right:0; padding:10px;',
-               height = "50%",
-               width = "25%",
-               align = "right")
+               style = 'position:absolute; top:0; right:0; padding:10px;'
+               # height = "50%",
+               # width = "25%",
+               # align = "right"
+               )
 ```
 
 ```{r load_data}
@@ -77,20 +117,22 @@ Basically, everything that popped out at the end of our final project for the cl
 For example, this is a great place to put descriptive plots:
 
 ```{r plot}
-example1 <- ggplot(mtcars, aes(mpg, wt)) +
+example_1 <- ggplot(mtcars, aes(mpg, wt)) +
   geom_point(aes(color=factor(carb))) +
-  labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
-       title="Seminal ggplot2 scatterplot example",
-       subtitle="A plot that is only useful for demonstration purposes")
+  labs(x="Fuel efficiency (mpg)",
+       y="Weight (tons)",
+       color="Carb",
+       title="GGPlotly",
+       subtitle="A plot that is only useful for demonstration")
 
-example1 + theme_pf()
+clean_ggplotly(example_1)
 ```
 
 Or a HTML formatted table:
 
 ```{r table}
 # Use kable to format a dataframe into a nice table
-kable(mtcars[1:8,]) %>%
+kable(mtcars[1:8,]) %>% 
   # Pipe to kable_styling() for default 
   kable_styling()
 ```
@@ -133,16 +175,13 @@ writeLines(c("# Report Session Info:",
               format(Sys.time(), tz = "EST"),
               "",
               pander(session_info())), 
-            con = "sessioninfo.md",
+            con = paste0("sessioninfo_",
+                         Sys.Date(),
+                         ".md"),
             sep = "\n")
 ```
 
 # 4. Contact
 
-To follow up, please reach out to your Problem Forward liaison or email us here:
-
-Problem Forward
-
 <http://www.problemforward.com>
-
-[jtleek@problemforward.com](mailto:jtleek@problemforward.com)
+[info@problemforward.com](mailto:info@problemforward.com)
